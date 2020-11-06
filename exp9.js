@@ -1136,6 +1136,7 @@ function mcbonoff()
 var isrotating=false;
 function rotaronoff()
 {   
+    
     if(mcboffstate==true)
     {
         alert("Alert ! Either please complete the connection first or set mcb to on.");
@@ -1144,6 +1145,8 @@ function rotaronoff()
     {
         if(isrotating==false)
         {
+            document.getElementById('varonoff').style.backgroundColor="green";
+            document.getElementById('varonoff').innerHTML="On"
             if (rotoroffstate==true)
             {
             isrotating=true;
