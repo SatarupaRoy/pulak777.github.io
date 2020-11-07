@@ -35,7 +35,7 @@ jsPlumb.ready(function () {
                
             });
         },
-         endpoint = {
+        endpoint1 = {
             anchor: [0.5, 0.5, 0, -1],
             connectorStyle: { strokeWidth: 4, stroke: "rgba(0,0,255)" },
             endpointsOnTop: true,
@@ -44,11 +44,41 @@ jsPlumb.ready(function () {
             isTarget: true,
             dropOptions: { tolerance: "touch", hoverClass: "dropHover" }
         },
-        prepare = function (elId) {
+        endpoint2 = {
+            anchor: [0.5, 0.5, 0, -1],
+            connectorStyle: { strokeWidth: 4, stroke: "rgba(255,0,0)" },
+            endpointsOnTop: true,
+            isSource: true,
+            maxConnections: 10,
+            isTarget: true,
+            dropOptions: { tolerance: "touch", hoverClass: "dropHover" }
+        },
+        endpoint3 = {
+            anchor: [0.5, 0.5, 0, -1],
+            connectorStyle: { strokeWidth: 4, stroke: "rgba(0,255,0)" },
+            endpointsOnTop: true,
+            isSource: true,
+            maxConnections: 10,
+            isTarget: true,
+            dropOptions: { tolerance: "touch", hoverClass: "dropHover" }
+        },
+        prepare1 = function (elId) {
             initAnimation(elId);
 
-            return instance.addEndpoint(elId, endpoint);
+            return instance.addEndpoint(elId, endpoint1);
         },
+        prepare2 = function (elId) {
+            initAnimation(elId);
+
+            return instance.addEndpoint(elId, endpoint2);
+        },
+        prepare3 = function (elId) {
+            initAnimation(elId);
+
+            return instance.addEndpoint(elId, endpoint3);
+        },
+
+
 
       
 
@@ -77,18 +107,18 @@ jsPlumb.ready(function () {
 
     // suspend drawing and initialise.
     instance.batch(function () {
-        var e1 = prepare("ld1"),
-            e2 = prepare("ld2"),
-            e3 = prepare("ld3"),
-            e4 = prepare("ld4"),
-            e5 = prepare("ld5"),
-            e6 = prepare("ld6"),
-            e7 = prepare("ld7"),
-            e8 = prepare("ld8"),
-            e9 = prepare("ld9"),
-            e10 = prepare("ld10"),
-            e11 = prepare("ld11"),
-            e12 = prepare("ld12"),
+        var e1 = prepare1("ld1"),
+            e2 = prepare2("ld2"),
+            e3 = prepare3("ld3"),
+            e4 = prepare1("ld4"),
+            e5 = prepare3("ld5"),
+            e6 = prepare2("ld6"),
+            e7 = prepare3("ld7"),
+            e8 = prepare2("ld8"),
+            e9 = prepare1("ld9"),
+            e10 = prepare2("ld10"),
+            e11 = prepare2("ld11"),
+            e12 = prepare3("ld12"),
             
             clearBtn = jsPlumb.getSelector("#anim-clear"),
             addBtn = jsPlumb.getSelector("#add");
@@ -493,20 +523,50 @@ jsPlumb.ready(function () {
                
             });
         },
-         endpoint = {
+        endpoint1 = {
             anchor: [0.5, 0.5, 0, -1],
-            connectorStyle: { strokeWidth: 4, stroke: "rgba(255,0,0)" },
+            connectorStyle: { strokeWidth: 4, stroke: "rgba(0,0,255)" },
             endpointsOnTop: true,
-            isSource: false,
+            isSource: true,
             maxConnections: 10,
             isTarget: true,
             dropOptions: { tolerance: "touch", hoverClass: "dropHover" }
         },
-        prepare = function (elId) {
+        endpoint2 = {
+            anchor: [0.5, 0.5, 0, -1],
+            connectorStyle: { strokeWidth: 4, stroke: "rgba(255,0,0)" },
+            endpointsOnTop: true,
+            isSource: true,
+            maxConnections: 10,
+            isTarget: true,
+            dropOptions: { tolerance: "touch", hoverClass: "dropHover" }
+        },
+        endpoint3 = {
+            anchor: [0.5, 0.5, 0, -1],
+            connectorStyle: { strokeWidth: 4, stroke: "rgba(0,255,0)" },
+            endpointsOnTop: true,
+            isSource: true,
+            maxConnections: 10,
+            isTarget: true,
+            dropOptions: { tolerance: "touch", hoverClass: "dropHover" }
+        },
+        prepare1 = function (elId) {
             initAnimation(elId);
 
-            return instance.addEndpoint(elId, endpoint);
+            return instance.addEndpoint(elId, endpoint1);
         },
+        prepare2 = function (elId) {
+            initAnimation(elId);
+
+            return instance.addEndpoint(elId, endpoint2);
+        },
+        prepare3 = function (elId) {
+            initAnimation(elId);
+
+            return instance.addEndpoint(elId, endpoint3);
+        },
+
+
 
         
 
@@ -535,18 +595,18 @@ jsPlumb.ready(function () {
 
     // suspend drawing and initialise.
     instance.batch(function () {
-        var e1 = prepare("ld1"),
-            e2 = prepare("ld2"),
-            e3 = prepare("ld3"),
-            e4 = prepare("ld4"),
-            e5 = prepare("ld5"),
-            e6 = prepare("ld6"),
-            e7 = prepare("ld7"),
-            e8 = prepare("ld8"),
-            e9 = prepare("ld9"),
-            e10 = prepare("ld10"),
-            e11 = prepare("ld11"),
-            e12 = prepare("ld12"),
+        var e1 = prepare1("ld1"),
+            e2 = prepare2("ld2"),
+            e3 = prepare3("ld3"),
+            e4 = prepare1("ld4"),
+            e5 = prepare3("ld5"),
+            e6 = prepare2("ld6"),
+            e7 = prepare3("ld7"),
+            e8 = prepare2("ld8"),
+            e9 = prepare1("ld9"),
+            e10 = prepare2("ld10"),
+            e11 = prepare2("ld11"),
+            e12 = prepare3("ld12"),
             
             clearBtn = jsPlumb.getSelector("#anim-clear"),
             addBtn = jsPlumb.getSelector("#add");
