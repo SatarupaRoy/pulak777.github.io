@@ -302,15 +302,6 @@ path, .jtk-endpoint {
       transform: rotate(30deg);
     }
   }
-  img.autoTrasformerouter
-  {
-    width:58%; 
-  }
-  img.autoTransformerinner
-  {
-    transform:rotate(270deg);
-    width:41%; 
-  }
   .rotate {
     animation: rotation 0s infinite linear;
   }
