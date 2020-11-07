@@ -10,9 +10,6 @@
         
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
         <script src="graph.ob.js"></script>
-    
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body>
   <div class="jtk-demo-main" data-demo-id="animation" >
@@ -39,20 +36,20 @@
         <div class="littledot" id="ld10"></br><a href="#" class="cmdLink detach" rel="ld10">10 (V)</a>
         </div>
 
-        <div class="littledot" id="ld13"></br><a href="#" class="cmdLink detach" rel="ld11">13</a>
+        <!--<div class="littledot" id="ld13"></br><a href="#" class="cmdLink detach" rel="ld11">13</a>
         </div>
         <div class="littledot" id="ld14"></br><a href="#" class="cmdLink detach" rel="ld12">14</a>
+        </div>-->
+
+        <div class="littledot" id="ld11"></br><a href="#" class="cmdLink detach" rel="ld11">11</a>
         </div>
 
-        <div class="littledot" id="ld15"></br><a href="#" class="cmdLink detach" rel="ld13">15</a>
-        </div>
-
-        <div class="littledot" id="ld11"></br><a href="#" class="cmdLink detach" rel="ld14">11</a>
+        <!--<div class="littledot" id="ld11"></br><a href="#" class="cmdLink detach" rel="ld14">11</a>
         </div>
         <div class="littledot" id="ld12"></br><a href="#" class="cmdLink detach" rel="ld15">12</a>
-        </div>
+        </div>-->
 
-        <div class="littledot" id="ld16"></br><a href="#" class="cmdLink detach" rel="ld16">16</a>
+        <div class="littledot" id="ld12"></br><a href="#" class="cmdLink detach" rel="ld11">12</a>
         </div>
         
         
@@ -67,7 +64,7 @@
             <img id="myimage3" class="mcbSwitch" src="push1.png" alt="MCB Switch" width="25" height="25">
           </div>
           <div style="position:absolute;top:4em;left:1.5em;">
-            <img id="myimage" class="mcbSwitch" src="mcboff.png" alt="MCB Switch" onclick="mcbonoff();" width="78" height="120">
+            <img id="myimage" class="mcbSwitch" src="mcboff.png" alt="MCB Switch" onclick="mcbonoff(); rotaronoff();" width="78" height="120">
           </div>
           </div>
           
@@ -181,12 +178,21 @@
 
         <div class="row"> 
           <div class="column18" >
-            <img style=" position:relative; top:0em; left:0px; width:100%;" class="resistanceBox" src="variac_f.png" alt="Variac" >
-            <div style="position: relative;left: 4em; top:-10.1em"><b>Variac</b></div>
+            <img style=" position:relative; top:1em; left:2em; width:60%;" class="resistanceBox" src="load.jpeg" alt="Variac" >
+            <div style="position: relative;left: 5em; top:-9.1em"><b>Load</b></div>
             <div class="slidecontainer" style=" position:relative; top:40px; left:40px">
               <input class="rang-slider" disabled="true" id="range" type="range" min="0" max="9" value="0"/>
             </div> 
-            <button id="varonoff" style="position: relative; left: 5.5em; top: -7em; background-color: red; padding-left: 1em; padding-right: 1em; padding-top: 0.5em; padding-bottom: 0.5em;" onclick="rotaronoff();">Off</button>
+            <div class="rang" style="position: absolute;top: 22em;left: -3em;">
+              <div class="rang-title">
+                <input class="rang-number" id="show5" type="text" value="0" disabled="disabled"/>
+              </div>
+            </div>
+            <div class="rang" style="position: absolute;top: 22em;left: 5em;">
+              <div class="rang-title">
+                <input class="rang-number" id="show6" type="text" value="0" disabled="disabled"/>
+              </div>
+            </div>
 
           </div>
           <div class="column41" >

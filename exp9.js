@@ -89,10 +89,6 @@ jsPlumb.ready(function () {
             e10 = prepare("ld10"),
             e11 = prepare("ld11"),
             e12 = prepare("ld12"),
-            e13 = prepare("ld13"),
-            e14 = prepare("ld14"),
-            e15 = prepare("ld15"),
-            e16 = prepare("ld16"),
             
             clearBtn = jsPlumb.getSelector("#anim-clear"),
             addBtn = jsPlumb.getSelector("#add");
@@ -113,26 +109,26 @@ jsPlumb.ready(function () {
     jsPlumb.fire("jsPlumbDemoLoaded", instance);
 
     document.getElementById("check-button").addEventListener("click", function () {
-        var correct_connections_1_11 = [
+        var correct_connections_1_3 = [
             {
                 "source": "ld1",
-                "target": "ld11"
+                "target": "ld3"
             },
 
             {
-                "source": "ld11",
+                "source": "ld3",
                 "target": "ld1"
             }
         ];
 
-        var correct_connections_2_13 = [
+        var correct_connections_2_4 = [
             {
                 "source": "ld2",
-                "target": "ld13"
+                "target": "ld4"
             },
     
             {
-                "source": "ld13",
+                "source": "ld4",
                 "target": "ld2"
             }
         ];
@@ -147,29 +143,7 @@ jsPlumb.ready(function () {
                 "target": "ld12"
             }
         ];
-        var correct_connections_3_15 = [
-            {
-                "source": "ld15",
-                "target": "ld3"
-            },
-    
-            {
-                "source": "ld3",
-                "target": "ld15"
-            }
-        ];
-        var correct_connections_4_14 = [
-            {
-                "source": "ld4",
-                "target": "ld14"
-            },
-    
-            {
-                "source": "ld14",
-                "target": "ld4"
-            }
-        ];
-        var correct_connections_5_4 = [
+        var correct_connections_4_5 = [
             {
                 "source": "ld4",
                 "target": "ld5"
@@ -180,7 +154,6 @@ jsPlumb.ready(function () {
                 "target": "ld4"
             }
         ];
-
         var correct_connections_6_7 = [
             {
                 "source": "ld6",
@@ -203,25 +176,25 @@ jsPlumb.ready(function () {
                 "target": "ld7"
             }
         ];
-        var correct_connections_9_16 = [
+        var correct_connections_9_11 = [
             {
                 "source": "ld9",
-                "target": "ld16"
+                "target": "ld11"
             },
     
             {
-                "source": "ld16",
+                "source": "ld11",
                 "target": "ld9"
             }
         ];
-        var correct_connections_10_15 = [
+        var correct_connections_10_12 = [
             {
                 "source": "ld10",
-                "target": "ld15"
+                "target": "ld12"
             },
     
             {
-                "source": "ld15",
+                "source": "ld12",
                 "target": "ld10"
             }
         ];
@@ -231,20 +204,20 @@ jsPlumb.ready(function () {
         var allowed_connections = [
             {
                 "source": "ld1",
-                "target": "ld11"
+                "target": "ld3"
             },
 
             {
-                "source": "ld11",
+                "source": "ld3",
                 "target": "ld1"
             },
             {
                 "source": "ld2",
-                "target": "ld13"
+                "target": "ld4"
             },
     
             {
-                "source": "ld13",
+                "source": "ld4",
                 "target": "ld2"
             },
             {
@@ -255,24 +228,6 @@ jsPlumb.ready(function () {
             {
                 "source": "ld3",
                 "target": "ld12"
-            },
-            {
-                "source": "ld15",
-                "target": "ld3"
-            },
-    
-            {
-                "source": "ld3",
-                "target": "ld15"
-            },
-            {
-                "source": "ld4",
-                "target": "ld14"
-            },
-    
-            {
-                "source": "ld14",
-                "target": "ld4"
             },
             {
                 "source": "ld4",
@@ -300,34 +255,32 @@ jsPlumb.ready(function () {
             },
             {
                 "source": "ld9",
-                "target": "ld16"
+                "target": "ld11"
             },
             {
-                "source": "ld16",
+                "source": "ld11",
                 "target": "ld9"
             },
             {
                 "source": "ld10",
-                "target": "ld15"
+                "target": "ld12"
             },
             {
-                "source": "ld15",
+                "source": "ld12",
                 "target": "ld10"
             }
         ];
 
         var actual_connections = instance.getAllConnections();
 
-        var is_connected_1_11= false;
-        var is_connected_2_13 = false;
+        var is_connected_1_3= false;
+        var is_connected_2_4 = false;
         var is_connected_3_12 = false;
-        var is_connected_3_15 = false;
-        var is_connected_4_14 = false;
-        var is_connected_5_4 = false;
+        var is_connected_4_5 = false;
         var is_connected_6_7= false;
         var is_connected_7_8 = false;
-        var is_connected_9_16 = false;
-        var is_connected_10_15 = false;
+        var is_connected_9_11 = false;
+        var is_connected_10_12 = false;
         var unallowed_connection_present = false;
 
         actual_connections.forEach(function (connection) {
@@ -336,8 +289,8 @@ jsPlumb.ready(function () {
                 "target": connection.targetId
             };
 
-            if(!is_connected_1_11){
-                is_connected_1_11 = correct_connections_1_11.find(function (conn) {
+            if(!is_connected_1_3){
+                is_connected_1_3 = correct_connections_1_3.find(function (conn) {
                     return conn.source === this_connection.source && conn.target === this_connection.target;
                   });
             }
@@ -355,8 +308,8 @@ jsPlumb.ready(function () {
                 "target": connection.targetId
             };
 
-            if(!is_connected_2_13){
-                is_connected_2_13 = correct_connections_2_13.find(function (conn) {
+            if(!is_connected_2_4){
+                is_connected_2_4 = correct_connections_2_4.find(function (conn) {
                     return conn.source === this_connection.source && conn.target === this_connection.target;
                   });
             }
@@ -393,46 +346,8 @@ jsPlumb.ready(function () {
                 "target": connection.targetId
             };
 
-            if(!is_connected_3_15){
-                is_connected_3_15 = correct_connections_3_15.find(function (conn) {
-                    return conn.source === this_connection.source && conn.target === this_connection.target;
-                  });
-            }
-
-           if(!unallowed_connection_present){
-                unallowed_connection_present = !(allowed_connections.find(function (conn) {
-                    return conn.source === this_connection.source && conn.target === this_connection.target;
-                }));
-            }
-
-        });
-        actual_connections.forEach(function (connection) {
-            var this_connection = {
-                "source": connection.sourceId,
-                "target": connection.targetId
-            };
-
-            if(!is_connected_4_14){
-                is_connected_4_14 = correct_connections_4_14.find(function (conn) {
-                    return conn.source === this_connection.source && conn.target === this_connection.target;
-                  });
-            }
-
-           if(!unallowed_connection_present){
-                unallowed_connection_present = !(allowed_connections.find(function (conn) {
-                    return conn.source === this_connection.source && conn.target === this_connection.target;
-                }));
-            }
-
-        });
-        actual_connections.forEach(function (connection) {
-            var this_connection = {
-                "source": connection.sourceId,
-                "target": connection.targetId
-            };
-
-            if(!is_connected_5_4){
-                is_connected_5_4= correct_connections_5_4.find(function (conn) {
+            if(!is_connected_4_5){
+                is_connected_4_5 = correct_connections_4_5.find(function (conn) {
                     return conn.source === this_connection.source && conn.target === this_connection.target;
                   });
             }
@@ -487,8 +402,8 @@ jsPlumb.ready(function () {
                 "target": connection.targetId
             };
 
-            if(!is_connected_9_16){
-                is_connected_9_16= correct_connections_9_16.find(function (conn) {
+            if(!is_connected_9_11){
+                is_connected_9_11= correct_connections_9_11.find(function (conn) {
                     return conn.source === this_connection.source && conn.target === this_connection.target;
                   });
             }
@@ -505,8 +420,8 @@ jsPlumb.ready(function () {
                 "target": connection.targetId
             };
 
-            if(!is_connected_10_15){
-                is_connected_10_15 = correct_connections_10_15.find(function (conn) {
+            if(!is_connected_10_12){
+                is_connected_10_12 = correct_connections_10_12.find(function (conn) {
                     return conn.source === this_connection.source && conn.target === this_connection.target;
                   });
             }
@@ -519,8 +434,7 @@ jsPlumb.ready(function () {
         });
         
 
-//&& is_connected_2_13 && is_connected_3_14 && is_connected_4_18 && is_connected_5_4 && is_connected_6_7 && is_connected_7_8 && is_connected_9_16 && is_connected_10_15 && is_connected_11_17 && is_connected_16_19 &&is_connected_17_20 &&is_connected_21_24 &&is_connected_22_25 && is_connected_23_26 
-        if ( is_connected_1_11 && !unallowed_connection_present) 
+        if ( is_connected_1_3 && is_connected_2_4 && is_connected_3_12 && is_connected_4_5 && is_connected_6_7 && is_connected_7_8 && is_connected_9_11 && is_connected_10_12 && !unallowed_connection_present) 
         {
             alert("Alert ! Correct connection proceed to take reading.");
             document.getElementById("check-button").disabled=true;
@@ -633,10 +547,6 @@ jsPlumb.ready(function () {
             e10 = prepare("ld10"),
             e11 = prepare("ld11"),
             e12 = prepare("ld12"),
-            e13 = prepare("ld13"),
-            e14 = prepare("ld14"),
-            e15 = prepare("ld15"),
-            e16 = prepare("ld16"),
             
             clearBtn = jsPlumb.getSelector("#anim-clear"),
             addBtn = jsPlumb.getSelector("#add");
@@ -657,26 +567,26 @@ jsPlumb.ready(function () {
     jsPlumb.fire("jsPlumbDemoLoaded", instance);
 
     document.getElementById("check-button").addEventListener("click", function () {
-        var correct_connections_1_11 = [
+        var correct_connections_1_3 = [
             {
                 "source": "ld1",
-                "target": "ld11"
+                "target": "ld3"
             },
 
             {
-                "source": "ld11",
+                "source": "ld3",
                 "target": "ld1"
             }
         ];
 
-        var correct_connections_2_13 = [
+        var correct_connections_2_4 = [
             {
                 "source": "ld2",
-                "target": "ld13"
+                "target": "ld4"
             },
     
             {
-                "source": "ld13",
+                "source": "ld4",
                 "target": "ld2"
             }
         ];
@@ -691,29 +601,7 @@ jsPlumb.ready(function () {
                 "target": "ld12"
             }
         ];
-        var correct_connections_3_15 = [
-            {
-                "source": "ld15",
-                "target": "ld3"
-            },
-    
-            {
-                "source": "ld3",
-                "target": "ld15"
-            }
-        ];
-        var correct_connections_4_14 = [
-            {
-                "source": "ld4",
-                "target": "ld14"
-            },
-    
-            {
-                "source": "ld14",
-                "target": "ld4"
-            }
-        ];
-        var correct_connections_5_4 = [
+        var correct_connections_4_5 = [
             {
                 "source": "ld4",
                 "target": "ld5"
@@ -724,7 +612,6 @@ jsPlumb.ready(function () {
                 "target": "ld4"
             }
         ];
-
         var correct_connections_6_7 = [
             {
                 "source": "ld6",
@@ -747,48 +634,47 @@ jsPlumb.ready(function () {
                 "target": "ld7"
             }
         ];
-        var correct_connections_9_16 = [
+        var correct_connections_9_11 = [
             {
                 "source": "ld9",
-                "target": "ld16"
+                "target": "ld11"
             },
     
             {
-                "source": "ld16",
+                "source": "ld11",
                 "target": "ld9"
             }
         ];
-        var correct_connections_10_15 = [
+        var correct_connections_10_12 = [
             {
                 "source": "ld10",
-                "target": "ld15"
+                "target": "ld12"
             },
     
             {
-                "source": "ld15",
+                "source": "ld12",
                 "target": "ld10"
             }
         ];
-        
 
         //a connection outside this will invalidate the circuit
         var allowed_connections = [
             {
                 "source": "ld1",
-                "target": "ld11"
+                "target": "ld3"
             },
 
             {
-                "source": "ld11",
+                "source": "ld3",
                 "target": "ld1"
             },
             {
                 "source": "ld2",
-                "target": "ld13"
+                "target": "ld4"
             },
     
             {
-                "source": "ld13",
+                "source": "ld4",
                 "target": "ld2"
             },
             {
@@ -799,24 +685,6 @@ jsPlumb.ready(function () {
             {
                 "source": "ld3",
                 "target": "ld12"
-            },
-            {
-                "source": "ld15",
-                "target": "ld3"
-            },
-    
-            {
-                "source": "ld3",
-                "target": "ld15"
-            },
-            {
-                "source": "ld4",
-                "target": "ld14"
-            },
-    
-            {
-                "source": "ld14",
-                "target": "ld4"
             },
             {
                 "source": "ld4",
@@ -844,34 +712,30 @@ jsPlumb.ready(function () {
             },
             {
                 "source": "ld9",
-                "target": "ld16"
+                "target": "ld11"
             },
             {
-                "source": "ld16",
+                "source": "ld11",
                 "target": "ld9"
             },
             {
                 "source": "ld10",
-                "target": "ld15"
+                "target": "ld12"
             },
             {
-                "source": "ld15",
+                "source": "ld12",
                 "target": "ld10"
             }
         ];
 
-        var actual_connections = instance.getAllConnections();
-
-        var is_connected_1_11= false;
-        var is_connected_2_13 = false;
+        var is_connected_1_3= false;
+        var is_connected_2_4 = false;
         var is_connected_3_12 = false;
-        var is_connected_3_15 = false;
-        var is_connected_4_14 = false;
-        var is_connected_5_4 = false;
+        var is_connected_4_5 = false;
         var is_connected_6_7= false;
         var is_connected_7_8 = false;
-        var is_connected_9_16 = false;
-        var is_connected_10_15 = false;
+        var is_connected_9_11 = false;
+        var is_connected_10_12 = false;
         var unallowed_connection_present = false;
 
         actual_connections.forEach(function (connection) {
@@ -880,8 +744,8 @@ jsPlumb.ready(function () {
                 "target": connection.targetId
             };
 
-            if(!is_connected_1_11){
-                is_connected_1_11 = correct_connections_1_11.find(function (conn) {
+            if(!is_connected_1_3){
+                is_connected_1_3 = correct_connections_1_3.find(function (conn) {
                     return conn.source === this_connection.source && conn.target === this_connection.target;
                   });
             }
@@ -899,8 +763,8 @@ jsPlumb.ready(function () {
                 "target": connection.targetId
             };
 
-            if(!is_connected_2_13){
-                is_connected_2_13 = correct_connections_2_13.find(function (conn) {
+            if(!is_connected_2_4){
+                is_connected_2_4 = correct_connections_2_4.find(function (conn) {
                     return conn.source === this_connection.source && conn.target === this_connection.target;
                   });
             }
@@ -937,46 +801,8 @@ jsPlumb.ready(function () {
                 "target": connection.targetId
             };
 
-            if(!is_connected_3_15){
-                is_connected_3_15 = correct_connections_3_15.find(function (conn) {
-                    return conn.source === this_connection.source && conn.target === this_connection.target;
-                  });
-            }
-
-           if(!unallowed_connection_present){
-                unallowed_connection_present = !(allowed_connections.find(function (conn) {
-                    return conn.source === this_connection.source && conn.target === this_connection.target;
-                }));
-            }
-
-        });
-        actual_connections.forEach(function (connection) {
-            var this_connection = {
-                "source": connection.sourceId,
-                "target": connection.targetId
-            };
-
-            if(!is_connected_4_14){
-                is_connected_4_14 = correct_connections_4_14.find(function (conn) {
-                    return conn.source === this_connection.source && conn.target === this_connection.target;
-                  });
-            }
-
-           if(!unallowed_connection_present){
-                unallowed_connection_present = !(allowed_connections.find(function (conn) {
-                    return conn.source === this_connection.source && conn.target === this_connection.target;
-                }));
-            }
-
-        });
-        actual_connections.forEach(function (connection) {
-            var this_connection = {
-                "source": connection.sourceId,
-                "target": connection.targetId
-            };
-
-            if(!is_connected_5_4){
-                is_connected_5_4= correct_connections_5_4.find(function (conn) {
+            if(!is_connected_4_5){
+                is_connected_4_5 = correct_connections_4_5.find(function (conn) {
                     return conn.source === this_connection.source && conn.target === this_connection.target;
                   });
             }
@@ -1031,8 +857,8 @@ jsPlumb.ready(function () {
                 "target": connection.targetId
             };
 
-            if(!is_connected_9_16){
-                is_connected_9_16= correct_connections_9_16.find(function (conn) {
+            if(!is_connected_9_11){
+                is_connected_9_11= correct_connections_9_11.find(function (conn) {
                     return conn.source === this_connection.source && conn.target === this_connection.target;
                   });
             }
@@ -1049,8 +875,8 @@ jsPlumb.ready(function () {
                 "target": connection.targetId
             };
 
-            if(!is_connected_10_15){
-                is_connected_10_15 = correct_connections_10_15.find(function (conn) {
+            if(!is_connected_10_12){
+                is_connected_10_12 = correct_connections_10_12.find(function (conn) {
                     return conn.source === this_connection.source && conn.target === this_connection.target;
                   });
             }
@@ -1061,23 +887,24 @@ jsPlumb.ready(function () {
                 }));
             }
         });
-//&& is_connected_2_13 && is_connected_3_14 && is_connected_4_18 && is_connected_5_4 && is_connected_6_7 && is_connected_7_8 && is_connected_9_16 && is_connected_10_15 && is_connected_11_17 && is_connected_16_19 &&is_connected_17_20 &&is_connected_21_24 &&is_connected_22_25 && is_connected_23_26 
-        if ( is_connected_1_11 && !unallowed_connection_present) 
+        
+//&& is_connected_2_4 && is_connected_3_14 && is_connected_4_18 && is_connected_5_4 && is_connected_6_7 && is_connected_7_8 && is_connected_9_11 && is_connected_10_12 && is_connected_11_17 && is_connected_16_19 &&is_connected_17_20 &&is_connected_21_24 &&is_connected_22_25 && is_connected_23_26 
+        if ( is_connected_1_3 && is_connected_2_4 && is_connected_3_12 && is_connected_4_5 && is_connected_6_7 && is_connected_7_8 && is_connected_9_11 && is_connected_10_12 && !unallowed_connection_present) 
         {
             alert("Alert ! Correct connection proceed to take reading.");
             document.getElementById("check-button").disabled=true;
             rightconnection=true;
+            disable_all();
             return;
         } 
         else 
         {
             alert("Alert ! Incorrect connection.");
-            
             return;
         } 
+     });
     });
-});
-}
+    }
 
 
 
@@ -1087,11 +914,7 @@ var mcboffstate=true;
 var were=270;
 function mcbonoff()
 {   
-    if(rightconnection==false)
-    {
-        alert("Alert ! Please complete the connection first.");
-    }
-    else
+   if(rightconnection==true)
     {
         if (mcboffstate==true)
         {
@@ -1123,7 +946,7 @@ function mcbonoff()
                 rangeShow.value = 0;
                 rangeClock.style.transform = 'rotate(' + 295+ 'deg)';
                 document.getElementById('myimage').src='mcboff.png';
-                document.getElementById('myimage1').src='Push1.png'; 
+                document.getElementById('myimage1').src='push1.png'; 
                 document.getElementById('myimage2').src='push1.png';
                 document.getElementById('myimage3').src='push1.png';
             }
@@ -1139,14 +962,12 @@ function rotaronoff()
     
     if(mcboffstate==true)
     {
-        alert("Alert ! Either please complete the connection first or set mcb to on.");
+        alert("Alert ! Please complete the connection first");
     }
     else
     {
         if(isrotating==false)
         {
-            document.getElementById('varonoff').style.backgroundColor="green";
-            document.getElementById('varonoff').innerHTML="On"
             if (rotoroffstate==true)
             {
             isrotating=true;
@@ -1209,6 +1030,8 @@ function rotaronoff()
     var rangeShow2 = document.querySelector("#show2");
     var rangeShow3 = document.querySelector("#show3");
     var rangeShow4 = document.querySelector("#show4");
+    var rangeShow5 = document.querySelector("#show5");
+    var rangeShow6 = document.querySelector("#show6");
 
     var rangeClock =  document.querySelector('.meter-clock');
     var rangeClock2 =  document.querySelector('.meter-clock2');
@@ -1240,54 +1063,72 @@ function rotaronoff()
           rangeShow2.value = 10.4;
           rangeShow3.value = 1470;
           rangeShow4.value=1250;
+          rangeShow5.value=4.3;
+          rangeShow6.value=27;
           document.getElementById('cirmover2').style.animation="rotation 3s infinite linear";
           if(rangeMeter.value <= 8) {
             rangeShow.value = 200;
             rangeShow2.value = 9.5;
             rangeShow3.value = 1390;
             rangeShow4.value=1330;
+            rangeShow5.value=3.7;
+          rangeShow6.value=21;
             document.getElementById('cirmover2').style.animation="rotation 2.6s infinite linear";
             if (rangeMeter.value <= 7) {
               rangeShow.value = 200;
               rangeShow2.value = 8.4;
               rangeShow3.value = 1330;
               rangeShow4.value=1380;
+              rangeShow5.value=3.1;
+          rangeShow6.value=16;
               document.getElementById('cirmover2').style.animation="rotation 2.3s infinite linear";
               if (rangeMeter.value <= 6) {
                 rangeShow.value = 200;
                 rangeShow2.value = 7.3;
                 rangeShow3.value = 1240;
                 rangeShow4.value=1415;
+                rangeShow5.value=2.5;
+                rangeShow6.value=12;
                 document.getElementById('cirmover2').style.animation="rotation 2s infinite linear";
                 if (rangeMeter.value <= 5) {
                   rangeShow.value = 200;
                   rangeShow2.value = 5.8;
                   rangeShow3.value = 840;
                   rangeShow4.value=1440;
+                  rangeShow5.value=2;
+                  rangeShow6.value=8;
                   document.getElementById('cirmover2').style.animation="rotation 1.7s infinite linear";
                   if (rangeMeter.value <= 4) {
                     rangeShow.value = 200;
                     rangeShow2.value = 4.8;
                     rangeShow3.value = 600;
                     rangeShow4.value=1465;
+                    rangeShow5.value=1.5;
+                    rangeShow6.value=5;
                     document.getElementById('cirmover2').style.animation="rotation 1.4s infinite linear";
                     if (rangeMeter.value <= 3) {
                       rangeShow.value = 200;
                       rangeShow2.value = 4.5;
                       rangeShow3.value = 420;
                       rangeShow4.value=1475;
+                      rangeShow5.value=1;
+                      rangeShow6.value=3;
                       document.getElementById('cirmover2').style.animation="rotation 1.1s infinite linear";;
                       if (rangeMeter.value <= 2) {
                         rangeShow.value = 200;
                         rangeShow2.value = 4.2;
                         rangeShow3.value = 380;
                         rangeShow4.value=1480;
+                        rangeShow5.value=0.5;
+                        rangeShow6.value=2;
                         document.getElementById('cirmover2').style.animation="rotation 0.8s infinite linear";
                         if (rangeMeter.value <= 1) {
                           rangeShow.value = 200;
                           rangeShow2.value = 4.1;
                           rangeShow3.value = 224;
                           rangeShow4.value=1490;
+                          rangeShow5.value=0.0;
+                          rangeShow6.value=0.0;
                           document.getElementById('cirmover2').style.animation="rotation 0.5s infinite linear";
                           if (rangeMeter.value <= 0) {
                             document.getElementById('cirmover2').style.animation="rotation 0s infinite linear";
@@ -1295,6 +1136,8 @@ function rotaronoff()
                             rangeShow2.value = 0;
                             rangeShow3.value = 0;
                             rangeShow4.value=0;
+                            rangeShow5.value=0;
+                            rangeShow6.value=0;
                           }
                         }
                       }

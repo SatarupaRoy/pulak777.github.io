@@ -27,7 +27,7 @@
     cursor: pointer;
     width: 12px;
     height: 12px;
-    background-image: url(littledot.png);
+    background-image: url("littledot.png");
     z-index: 5;
     position: absolute;
     border-radius: 31px;
@@ -88,32 +88,13 @@
 }
 
 
-#ld16 {
+#ld11 {
     top: 4.72em;
     left: 46em;
 }
 
-#ld11 {
-    top: 29.8em;
-    left: 2em;
-}
+
 #ld12 {
-    top: 29.8em;
-    left: 10.5em;
-}
-
-
-#ld13 {
-    top: 33.77em;
-    left: 2em;
-}
-#ld14 {
-    top: 33.77em;
-    left: 10.5em;
-}
-
-
-#ld15 {
     top: 11.77em;
     left: 46em;
 }
