@@ -26,7 +26,4 @@
 ![](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![](https://img.shields.io/badge/fedora-0000d0?style=for-the-badge&logo=fedora&logoColor=white)
-### 💻
-![](https://img.shields.io/badge/Windows-DELL_i3_12GB_1TB-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
-[![Pulak's github stats](https://github-readme-stats.vercel.app/api?username=pulak777)](https://github.com/pulak777)
